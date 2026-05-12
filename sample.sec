@@ -1,0 +1,51 @@
+STRING systemName
+SET systemName = 'Secure Banking Portal'
+
+STRING welcomeMessage
+SET welcomeMessage = 'Welcome to SecureLang Security System'
+
+ARRAY users
+ARRAY transactions
+ARRAY logs
+
+POINTER userPointer
+
+INPUT username
+INPUT password
+INPUT adminUser
+
+QUERY "SELECT * FROM users WHERE name = '" + username + "'"
+
+SET loginAttempts = 3
+
+PRINT welcomeMessage
+PRINT username
+PRINT password
+
+STRING token
+SET token = 'abc123securetoken'
+
+PRINT token
+
+STRING secretKey
+SET secretKey = 'SECRET-KEY-001'
+
+PRINT secretKey
+
+STRING dangerousCommand
+SET dangerousCommand = eval('2+2')
+
+PRINT dangerousCommand
+
+STRING externalLink
+SET externalLink = 'http://unsafe-website.com'
+
+PRINT externalLink
+
+QUERY "UPDATE users SET role='admin' WHERE name='adminUser'"
+
+QUERY "DELETE FROM transactions WHERE id = 5"
+
+QUERY "DROP TABLE logs"
+
+PRINT systemName
